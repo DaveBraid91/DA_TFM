@@ -50,8 +50,6 @@ namespace DOTSAuthoring
         [field: SerializeField] public float MoveSpeed { get; private set; } = 5f;
 
         [SerializeField] private GameObject rendererChild;
-        
-        [SerializeField] private Camera worldCamera;
 
         private class Baker : Baker<CharacterAuthoring>
         {
@@ -69,19 +67,16 @@ namespace DOTSAuthoring
                     Value = authoring.MoveSpeed
                 });
 
-                if (authoring.rendererChild != null)
+                if (authoring.rendererChild == null) return;
+                
+                var visualEntity = GetEntity(
+                    authoring.rendererChild,
+                    TransformUsageFlags.Renderable);
+
+                AddComponent(entity, new CharacterVisualReference
                 {
-                    var visualEntity = GetEntity(
-                        authoring.rendererChild,
-                        TransformUsageFlags.Renderable);
-
-                    AddComponent(entity, new CharacterVisualReference
-                    {
-                        Value = visualEntity
-                    });
-                }
-
-                if (authoring.worldCamera == null) return;
+                    Value = visualEntity
+                });
             }
         }
     }
@@ -103,11 +98,6 @@ namespace DOTSAuthoring
 
     public partial struct CharacterMoveSystem : ISystem
     {
-        public void OnCreate(ref SystemState state)
-        {
-            state.RequireForUpdate<CameraOrthoSizeNormalized>();
-        }
-
         [BurstCompile]
         public void OnUpdate(ref SystemState state)
         {
@@ -168,10 +158,10 @@ namespace DOTSAuthoring
     
     public partial struct CharacterDepthSystem : ISystem
     {
-        public void OnCreate(ref SystemState state)
-        {
-            state.RequireForUpdate<CameraOrthoSizeNormalized>();
-        }
+        // public void OnCreate(ref SystemState state)
+        // {
+        //     state.RequireForUpdate<CameraOrthoSizeNormalized>();
+        // }
 
         [BurstCompile]
         public void OnUpdate(ref SystemState state)
@@ -184,12 +174,12 @@ namespace DOTSAuthoring
 
             var localToWorldLookup = SystemAPI.GetComponentLookup<LocalToWorld>(true);
 
-            var depthScale = SystemAPI.GetSingleton<CameraOrthoSizeNormalized>().Value;
+            //var depthScale = SystemAPI.GetSingleton<CameraOrthoSizeNormalized>().Value;
 
             foreach (var (characterLocalToWorld, visualReference) in
                      SystemAPI.Query<RefRO<LocalToWorld>, RefRO<CharacterVisualReference>>())
             {
-                Entity visualEntity = visualReference.ValueRO.Value;
+                var visualEntity = visualReference.ValueRO.Value;
 
                 if (!visualTransformLookup.HasComponent(visualEntity) ||
                     !visualLocalToWorldLookup.HasComponent(visualEntity))
@@ -197,11 +187,7 @@ namespace DOTSAuthoring
                     continue;
                 }
 
-                var visualTransform =
-                    visualTransformLookup.GetRefRW(visualEntity);
-
-                var visualLocalToWorld =
-                    visualLocalToWorldLookup[visualEntity];
+                var visualTransform = visualTransformLookup.GetRefRW(visualEntity);
 
                 var visualTransformValue = visualTransform.ValueRW;
 
@@ -211,10 +197,10 @@ namespace DOTSAuthoring
                     characterLocalToWorld.ValueRO,
                     ref parentLookup,
                     ref localToWorldLookup,
-                    depthScale,
+                    1f,
                     0.5f);
 
-                visualTransform.ValueRW.Position = new float3(visualTransform.ValueRW.Position.x, visualTransform.ValueRW.Position.x, visualTransformValue.Position.z);
+                visualTransform.ValueRW = visualTransformValue;
             }
         }
     }

@@ -18,7 +18,7 @@ namespace DOTSAuthoring
             {
                 var entity = GetEntity(TransformUsageFlags.None);
 
-                float orthoSize = 15f;
+                var orthoSize = 15f;
                 
                 authoring.targetCamera = authoring.GetComponent<Camera>();
                 

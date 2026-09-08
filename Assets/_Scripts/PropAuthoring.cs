@@ -45,7 +45,7 @@ namespace DOTSAuthoring
                 float3 worldPos = localToWorld.ValueRO.Position;
                 var t = transform.ValueRW;
 
-                DepthUtility.ApplyDepthFromWorldY(entity, ref t, localToWorld.ValueRO, ref parentLookup, ref localToWorldLookup, depthScale, 0.483f);
+                DepthUtility.ApplyDepthFromWorldY(entity, ref t, localToWorld.ValueRO, ref parentLookup, ref localToWorldLookup);
 
                 transform.ValueRW = t;
                 

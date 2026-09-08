@@ -12,24 +12,24 @@ namespace DOTSAuthoring
             in LocalToWorld localToWorld,
             ref ComponentLookup<Parent> parentLookup,
             ref ComponentLookup<LocalToWorld> localToWorldLookup,
-            float depthScale,
-            float offset)
+            float depthScale = 1f,
+            float offset = 0f)
         {
-            float3 worldPos = localToWorld.Position;
+            var worldPos = localToWorld.Position;
 
-            float desiredWorldZ = worldPos.y * depthScale - offset;
+            var desiredWorldZ = worldPos.y * depthScale - offset * depthScale;
 
-            float3 desiredWorldPos = new float3(
+            var desiredWorldPos = new float3(
                 worldPos.x,
                 worldPos.y,
                 desiredWorldZ);
 
             if (parentLookup.HasComponent(entity))
             {
-                Entity parent = parentLookup[entity].Value;
-                float4x4 parentWorld = localToWorldLookup[parent].Value;
+                var parent = parentLookup[entity].Value;
+                var parentWorld = localToWorldLookup[parent].Value;
 
-                float3 desiredLocalPos =
+                var desiredLocalPos =
                     math.transform(math.inverse(parentWorld), desiredWorldPos);
 
                 localTransform.Position = desiredLocalPos;
