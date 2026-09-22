@@ -638,8 +638,6 @@ namespace DOTSAuthoring
                                     targetDir = math.normalizesafe(myPos - groupData.FleeOrigin);
                                 }
                             }
-                            
-                            Debug.Log(targetDir);
 
                             containmentMultiplier = 2f;
                             break;
@@ -690,7 +688,7 @@ namespace DOTSAuthoring
                         var start = new float3(myPos.x, myPos.y, 0f);
                         var end = start + new float3(rayDir.x, rayDir.y, 0f) * rayLength;
 
-                        var defaultLayer = 1u << 0; // capa 0: Default
+                        var obstacleLayer = 1u << 8; // capa 8: Obstacles
 
                         var rayInput = new RaycastInput
                         {
@@ -699,7 +697,7 @@ namespace DOTSAuthoring
                             Filter = new CollisionFilter
                             {
                                 BelongsTo    = ~0u,        // o la capa a la que “pertenece” tu rayo
-                                CollidesWith = defaultLayer,
+                                CollidesWith = obstacleLayer,
                                 GroupIndex   = 0
                             }
                         };
@@ -871,5 +869,116 @@ namespace DOTSAuthoring
         }
     }
 
+    #endregion
+    
+    #region HerdSpawnSystem
+    
+    [UpdateInGroup(typeof(SimulationSystemGroup))]
+    public partial struct HerdSpawnSystem : ISystem
+    {
+        private Random _random;
+
+        [BurstCompile]
+        public void OnCreate(ref SystemState state)
+        {
+            state.RequireForUpdate<HerdSpawnerConfig>();
+            state.RequireForUpdate<HerdWorldBounds>();    // Min/Max/Margin[file:300][file:301]
+            _random = Random.CreateFromIndex(123456u);
+        }
+
+        [BurstCompile]
+        public void OnUpdate(ref SystemState state)
+        {
+            var em = state.EntityManager;
+
+            var spawnerEntity = SystemAPI.GetSingletonEntity<HerdSpawnerConfig>();
+            var config = SystemAPI.GetComponent<HerdSpawnerConfig>(spawnerEntity);
+            var request = SystemAPI.GetComponent<HerdSpawnRequest>(spawnerEntity);
+            var bounds = SystemAPI.GetSingleton<HerdWorldBounds>();
+
+            if (request.PendingHerdGroups <= 0)
+                return;
+
+            var groupsToSpawn = request.PendingHerdGroups;
+            request.PendingHerdGroups = 0;
+            em.SetComponentData(spawnerEntity, request);
+
+            var nextHerdId = config.NextHerdId;
+
+            var min = bounds.Min + bounds.Margin;
+            var max = bounds.Max - bounds.Margin;
+
+            for (int g = 0; g < groupsToSpawn; g++)
+            {
+                var herdId = nextHerdId++;
+                
+                // Centro del rebaño dentro de los límites
+                var center2D = new float2(
+                    _random.NextFloat(min.x, max.x),
+                    _random.NextFloat(min.y, max.y));
+                
+                var groupPos = new float3(center2D.x, center2D.y, 0f);
+
+                // 1) Instanciar grupo lógico
+                var groupEntity = em.Instantiate(config.HerdGroupPrefab);
+                
+                // HerdId del grupo = herdId del rebaño
+                if (em.HasComponent<HerdGroup>(groupEntity))
+                {
+                    em.SetComponentData(groupEntity, new HerdGroup
+                    {
+                        HerdId = herdId
+                    });
+                }
+                
+                if (em.HasComponent<LocalTransform>(groupEntity))
+                {
+                    em.SetComponentData(groupEntity, LocalTransform.FromPositionRotationScale(
+                        groupPos,
+                        quaternion.identity,
+                        1f));
+                }
+
+                // 2) Instanciar agentes del rebaño
+                for (int i = 0; i < config.AgentsPerHerd; i++)
+                {
+                    var angle  = _random.NextFloat(0f, math.PI * 2f);
+                    var radius = _random.NextFloat(0f, config.SpawnRadius);
+                    var offset = new float2(
+                        math.cos(angle) * radius,
+                        math.sin(angle) * radius);
+
+                    var agentEntity = em.Instantiate(config.HerdAgentPrefab);
+
+                    // HerdId del agente = HerdId del grupo
+                    if (em.HasComponent<HerdAgent>(agentEntity))
+                    {
+                        em.SetComponentData(agentEntity, new HerdAgent
+                        {
+                            HerdId = herdId
+                        });
+                    }
+                    
+                    //em.AddComponentData(agentEntity, new Parent { Value = groupEntity });
+
+                    // Offset local alrededor del centro
+                    var worldPos = new float3(center2D.x + offset.x, center2D.y + offset.y, 0f);
+
+                    if (em.HasComponent<LocalTransform>(agentEntity))
+                    {
+                        em.SetComponentData(agentEntity, LocalTransform.FromPositionRotationScale(
+                            worldPos,
+                            quaternion.identity,
+                            1f));
+                    }
+                }
+            }
+
+            // Guardamos el siguiente HerdId para futuras spawns
+            config.NextHerdId = nextHerdId;
+            em.SetComponentData(spawnerEntity, config);
+        }
+    }
+    
     #endregion
 }

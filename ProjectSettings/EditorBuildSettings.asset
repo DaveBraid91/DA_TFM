@@ -6,7 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Playground.unity
+    path: Assets/Scenes/MainMenu.unity
+    guid: 3951025557844f641b2b5b1a438e3a90
+  - enabled: 1
+    path: Assets/Scenes/GOPlayground.unity
+    guid: f6f2c3f583882d2428149571ddc90f92
+  - enabled: 1
+    path: Assets/Scenes/DOTSPlayground.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

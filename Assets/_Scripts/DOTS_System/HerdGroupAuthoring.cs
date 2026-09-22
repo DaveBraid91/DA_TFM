@@ -13,7 +13,7 @@ namespace DOTSAuthoring
         {
             public override void Bake(HerdGroupAuthoring authoring)
             {
-                var entity = GetEntity(TransformUsageFlags.None);
+                var entity = GetEntity(TransformUsageFlags.Dynamic);
 
                 AddComponent(entity, new HerdGroup
                 {

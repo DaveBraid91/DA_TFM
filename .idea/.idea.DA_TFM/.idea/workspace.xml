@@ -5,28 +5,105 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0c7d77ab-dd88-47b5-89b8-2056c5866f51" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/HerdAgentAuthoring.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/HerdGroupAuthoring.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/HerdSystems.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/HerdWorldBoundsAuthoring.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/DOTS_System/CameraAuthoring.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/DOTS_System/CameraAuthoring.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/DOTS_System/CameraOrthoSizeBridge.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/DOTS_System/CameraOrthoSizeBridge.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/DOTS_System/CharacterAuthoring.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/DOTS_System/CharacterAuthoring.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/DOTS_System/CharacterRendererAuthoring.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/DOTS_System/CharacterRendererAuthoring.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/DOTS_System/DepthUtility.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/DOTS_System/DepthUtility.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/DOTS_System/HerdAgentAuthoring.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/DOTS_System/HerdAgentAuthoring.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/DOTS_System/HerdDotsSpawnUI.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/DOTS_System/HerdGroupAuthoring.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/DOTS_System/HerdGroupAuthoring.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/DOTS_System/HerdSpawnerAuthoring.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/DOTS_System/HerdSystems.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/DOTS_System/HerdSystems.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/DOTS_System/HerdWorldBoundsAuthoring.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/DOTS_System/HerdWorldBoundsAuthoring.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/DOTS_System/PlayerAuthoring.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/DOTS_System/PlayerAuthoring.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/DOTS_System/PropAuthoring.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/DOTS_System/PropAuthoring.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/DesignPatterns/Singleton.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/GO_System.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/GO_System/AIBehaviour.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/GO_System/CharacterAnimatorGO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/GO_System/DepthFromY.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/GO_System/DepthUtilityGO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/GO_System/GlobalTimeSetter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/GO_System/HerdAgentSettingsGO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/GO_System/HerdAgentStateMotor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/GO_System/HerdBaseState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/GO_System/HerdFleeState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/GO_System/HerdGroupController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/GO_System/HerdIdleState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/GO_System/HerdSpawner.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/GO_System/HerdState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/GO_System/HerdWanderState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/GO_System/PlayerController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Managers/InputManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Managers/UIManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/PerformanceStatsOverlay.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DA_TFM/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DA_TFM/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Input/DefaultInputActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Input/DefaultInputActions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Input/DefaultInputActions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Input/DefaultInputActions.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Playground.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Playground.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FenceHx4.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FenceHx4.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FenceLLCVx2.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FenceLLCVx2.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FenceLRCVx2.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FenceLRCVx2.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FenceULCVx4.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FenceULCVx4.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FenceURCVx4.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FenceURCVx4.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FenceVx2.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FenceVx2.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Fences.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Fences.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Playground.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Playground.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Playground/EntitiesScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Playground/EntitiesScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/CameraAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/CameraAuthoring.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/CharacterAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/CharacterAuthoring.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/DepthUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/DepthUtility.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/PlayerAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/PlayerAuthoring.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/PropAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/PropAuthoring.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/pig_movement.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/pig_movement.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/CameraAuthoring.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/CameraAuthoring.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/CameraOrthoSizeBridge.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/CameraOrthoSizeBridge.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/CharacterAuthoring.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/CharacterAuthoring.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/CharacterRendererAuthoring.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/CharacterRendererAuthoring.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/DepthUtility.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/DepthUtility.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/HerdAgentAuthoring.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/HerdAgentAuthoring.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/HerdGroupAuthoring.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/HerdGroupAuthoring.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/HerdSystems.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/HerdSystems.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/HerdWorldBoundsAuthoring.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/HerdWorldBoundsAuthoring.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/PlayerAuthoring.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/PlayerAuthoring.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/PropAuthoring.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/PropAuthoring.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -44,9 +121,15 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/HerdGroupAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/HerdWorldBoundsAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2e73e675e85540d691359a460c857383212e00/55/2acd2e1d/Object.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2e73e675e85540d691359a460c857383212e00/57/0b7f115d/Transform.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/41d29b352f6a475ab1bf7c6628b8279046ae00/cc/a737006e/IntPtr.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/DOTS_System/HerdDotsSpawnUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/GO_System/HerdAgentSettingsGO.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Managers/InputManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/PerformanceStatsOverlay.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@6ce362df365b/Unity.Entities/Stubs/Unity/Debug.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.physics@98d099aa1205/Unity.Physics/Dynamics/Jacobians/Motors/AngularVelocityMotorJacobian.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -59,6 +142,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
